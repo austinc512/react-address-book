@@ -1,19 +1,16 @@
 body {
-  /* width: 50%; */
   background-color: #89cff0;
   font-family: system-ui;
+  color: white;
 }
 
 li {
   list-style: none;
-  background-color: lightblue;
+  background-color: #ff6961;
   border-radius: 0.7rem;
   padding: 15px;
   display: flex;
-}
-
-div {
-  /* background-color: grey; */
+  box-shadow: 20px 10px 19px #d291bc;
 }
 
 ul {
@@ -25,12 +22,9 @@ ul {
 }
 
 h1 {
-  text-align: center;
+  margin-left: 45px;
+  color: #ff4d4d;
 }
-
-/* h4 {
-  display: inline-block;
-} */
 
 .address {
   padding: 15px;
@@ -41,4 +35,13 @@ p {
 h1,
 h4 {
   font-weight: 625;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #008cba;
+  text-decoration: none;
+  border-style: none;
+  padding: 20px;
+  font-size: 15px;
 }

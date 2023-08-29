@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 /*
-
 build the box that contains 1 entity
 with a toggle button that shows/hides additional info
-
 */
 
 const Child = (props) => {
@@ -16,7 +14,6 @@ const Child = (props) => {
   const names = props.data.name;
   const location = props.data.location;
 
-  //
   return (
     <li>
       <div className="basic">
