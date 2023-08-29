@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ChildComponent from "./ChildComponent";
 
-function App() {
+console.clear();
+
+const App = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api?results=25")
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        return response;
+      })
+      .then((response) => {
+        setUsers(response.results); // Update users state
+      });
+  }, []);
+  // having users in dependency array creates infinite loop
+
+  useEffect(() => {
+    console.log("updated, ", users);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Address Book</h1>
+      <ul>
+        {users.map((user) => {
+          return <ChildComponent data={user} key={user.login.uuid} />;
+        })}
+      </ul>
     </div>
   );
-}
+};
 
 export default App;
